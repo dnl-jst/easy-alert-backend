@@ -6,6 +6,9 @@ error_reporting(E_ALL);
 require_once('library/EA/AutoLoader.php');
 EA_AutoLoader::init(array(), 'library/');
 
+$oAuth = new EA_Auth();
+$oAuth->setPassword('l33t');
+
 $oCheck2 = new EA_Check_Http_Request();
 $oCheck2->setHost('www.google.de');
 $oCheck2->setPort(80);
@@ -20,6 +23,7 @@ $oCheck->setRemotePort(9786);
 $oCheck->setRequest($oRequest2);
 
 $oRequest = new EA_Request();
+$oRequest->setAuth($oAuth);
 $oRequest->setCheck($oCheck);
 
 $oSocketClient = new EA_Socket_Client('127.0.0.1', 9786, 5);
