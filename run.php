@@ -25,7 +25,9 @@
  * SUCH DAMAGE.
  */
 
-ini_set('display_errors', 1);
+define('EA_BACKEND_VERSION', '0.011');
+
+ini_set('display_errors', false);
 error_reporting(E_ALL);
 
 require_once('library/EA/AutoLoader.php');
